@@ -1,7 +1,8 @@
 import httpx
 from selectolax.parser import HTMLParser
-from ._dataclasses import Result
 from yarl import URL
+
+from ._dataclasses import Result
 
 
 def anext(async_iterator):
