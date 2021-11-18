@@ -1,7 +1,7 @@
 
 # Asynchronous and Synchronous DuckDuckGo Search Engine Scraper
 
-Scrapes the [duckduckgo](duck.com) search engine.
+Scrapes the [duckduckgo](https://duck.com) search engine.
 
 # Asynchronous Example
 ```py
