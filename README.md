@@ -43,7 +43,7 @@ Methods
 - `as_dict()`
     - Converts the dataclass to a `dict` object and returns it.
 
-## How To Install
+# How To Install
 
 - **Using pip:** `pip install ddg-scraper`
 - **Manual:**
