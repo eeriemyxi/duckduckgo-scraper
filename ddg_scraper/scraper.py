@@ -87,17 +87,18 @@ class Search:
         results = parser.css_first("div.results")
 
         for result in results.css("div.result"):
-            title = result.css_first("a.result__a")
-            if result is None or title is None:
+            try:
+                title = result.css_first("a.result__a")
+                title_text = title.text()
+                title_url = URL(title.attrs["href"]).query.get("uddg")
+                description = result.css_first("a.result__snippet").text()
+                icon_url = (
+                    URL(result.css_first("img.result__icon__img").attrs["src"])
+                    .with_scheme("https")
+                    .human_repr()
+                )
+            except Exception:
                 raise ValueError('No results.') from None
-            title_text = title.text()
-            title_url = URL(title.attrs["href"]).query.get("uddg")
-            description = result.css_first("a.result__snippet").text()
-            icon_url = (
-                URL(result.css_first("img.result__icon__img").attrs["src"])
-                .with_scheme("https")
-                .human_repr()
-            )
             yield Result(
                 title=title_text,
                 description=description,
