@@ -31,9 +31,9 @@ with duck_scraper.search("python") as results:
         ...
 ```
 
-In both examples, `result` is [`ddg_scraper.SearchResult`](ddg_scraper/structs.py)
+In both examples, `result` is [`ddg_scraper.SearchResult`](https://github.com/m-y-x-i/duckduckgo-scraper/blob/master/ddg_scraper/structs.py)
 
-# Attributes and Methods of [`ddg_scraper.SearchResult`](ddg_scraper/structs.py)
+# Attributes and Methods of [`ddg_scraper.SearchResult`](https://github.com/m-y-x-i/duckduckgo-scraper/blob/master/ddg_scraper/structs.py)
 
 Attributes
 
@@ -48,5 +48,5 @@ Attributes
 - **Manual:**
   - Clone the folder somewhere
   - CD to the location
-  - Install the packages listed in [`requirements.txt`](/requirements.txt) (`pip install -r requirements.txt`)
-  - Copy the folder, [ddg_scraper](/ddg_scraper) where you want to use it.
+  - Install the packages listed in [`requirements.txt`](https://github.com/m-y-x-i/duckduckgo-scraper/blob/master/requirements.txt) (`pip install -r requirements.txt`)
+  - Copy the folder, [ddg_scraper](https://github.com/m-y-x-i/duckduckgo-scraper/blob/master/ddg_scraper) where you want to use it.
