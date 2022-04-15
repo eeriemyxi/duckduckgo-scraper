@@ -5,43 +5,42 @@ Scrapes the [duckduckgo](https://duck.com) search engine.
 
 # Asynchronous Example
 ```py
-from ddg_scraper import asearch
-import asyncio
+from ddg_scraper import DuckScraper
+import trio
 
+
+duck_scraper = DuckScraper()
 
 async def main():
-    results = await asearch("Python")
-    async for result in results:
-        ...
+    async with duck_scraper.search("python") as results:
+        async for result in results:
+            ...
 
-asyncio.run(main())
+trio.run(main)
 ```
 
 # Synchronous Example
 ```py
-from ddg_scraper import search
+from ddg_scraper import DuckScraper
 
 
-results = search("Python")
-for result in results:
-    ...
+duck_scraper = DuckScraper()
+
+with duck_scraper.search("python") as results:
+    for result in results:
+        ...
 ```
 
-In both examples, `result` is [`ddg_scraper.Result`](ddg_scraper/_dataclasses.py)
+In both examples, `result` is [`ddg_scraper.SearchResult`](ddg_scraper/structs.py)
 
-# Attributes and Methods of [`ddg_scraper.Result`](ddg_scraper/_dataclasses.py)
+# Attributes and Methods of [`ddg_scraper.SearchResult`](ddg_scraper/structs.py)
 
 Attributes
 
 - `title`
-- `description`
 - `url`
-- `icon_url`
-
-Methods
-
-- `as_dict()`
-    - Converts the dataclass to a `dict` object and returns it.
+- `favicon`
+- `snippet`
 
 # How To Install
 
